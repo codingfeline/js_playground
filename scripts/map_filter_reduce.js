@@ -35,7 +35,7 @@ Array.prototype.myMap = function (cb) {
 }
 const multiply3 = numbs.myMap((num, i, arr) => num * 3)
 fancyLog([multiply3, ' multiply3'], '#6767eb')
-console.log(multiply3)fd
+console.log(multiply3)
 
 // Polyfill for filter()
 Array.prototype.myFilter = function (cb) {
