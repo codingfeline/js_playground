@@ -31,3 +31,14 @@ function subscribe() {
 
 let isSubscribed = subscribe()
 document.getElementById('sub').addEventListener('click', () => isSubscribed())
+
+// Once Polyfill
+function oncuechange(func, context) {
+  let ran
+
+  return function () {
+    if (func) {
+      ran = func.apply(context || this)
+    }
+  }
+}
