@@ -33,12 +33,19 @@ let isSubscribed = subscribe()
 document.getElementById('sub').addEventListener('click', () => isSubscribed())
 
 // Once Polyfill
-function oncuechange(func, context) {
+function once(func, context) {
   let ran
 
   return function () {
     if (func) {
-      ran = func.apply(context || this)
+      ran = func.apply(context || this, arguments)
+      func = null
     }
+
+    return ran
   }
 }
+const hello = once((a, b) => console.log('hello', a, b))
+hello(1, 2)
+hello(1, 3)
+hello(1, 2)
