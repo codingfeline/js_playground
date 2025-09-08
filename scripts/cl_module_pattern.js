@@ -1,4 +1,6 @@
 //Module Pattern
+let file = 'cl_module_pattern'
+
 var Module = function () {
   function privateMethod() {
     console.log('private')
@@ -45,7 +47,7 @@ function once(func, context) {
     return ran
   }
 }
-const hello = once((a, b) => console.log('hello', a, b))
+const hello = once((a, b) => fancyLog(['hello', a, b, [file, '\nline-50']], 'pink'))
 hello(1, 2)
 hello(1, 3)
 hello(1, 2)
