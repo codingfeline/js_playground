@@ -4,7 +4,7 @@
 function sum3(a) {
   return function (b) {
     return function (c) {
-      fancyLog([a + b + c], 'pink')
+      fancyLog([a + b + c], '#e095a1')
     }
   }
 }
@@ -20,3 +20,12 @@ function add(a) {
 }
 
 console.log(add(5)(2)(4)())
+
+// Partial Application
+function sum4(a) {
+  return function (b, c) {
+    return a + b + c
+  }
+}
+
+fancyLog(sum4(20)(1, 4), '#cf7181')
