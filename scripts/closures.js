@@ -16,17 +16,18 @@ function a() {
   }
 }
 a()
-//* output is 3, 3 times
-//* make the above output 0,1,2 without using let
+//* output is 4, 4 times
+//* the above can be made to output 1,2,3 using let
+//* make the above output 1,2,3 without using let
 
-// for (var i = 0; i < 3; i++) {
-//   function inner(i) {
-//     setTimeout(function log() {
-//       fancyLog(i, colour.red)
-//     }, i * 1000)
-//   }
-//   inner(i)
-// }
+for (var i = 0; i <= 3; i++) {
+  function inner(i) {
+    setTimeout(function log() {
+      fancyLog([i, file2, 'line-25'], colour.red)
+    }, i * 1000)
+  }
+  inner(i)
+}
 
 //private counter
 function counter() {
