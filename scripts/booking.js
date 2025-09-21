@@ -40,4 +40,15 @@ const late = [
   '22:45',
   '23:00',
 ]
-console.log(late)
+
+function test(name) {
+  return function (cat) {
+    return name == 'naz' && cat == 'chloie'
+      ? 'me and my cat'
+      : name == 'naz' || cat == 'chloie'
+      ? 'me or my cat'
+      : 'both wrong'
+  }
+}
+
+fancyLog(test('naz2')('chloie'), '#a75757')

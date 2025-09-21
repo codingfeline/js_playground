@@ -6,3 +6,18 @@ body {
 button {
   color: #6a3094;
 }
+
+.todo {
+  padding: 1.5em;
+  margin-top: 0.5em;
+  border-radius: 0.5em;
+  background-color: #f8a0a0;
+  opacity: 0;
+  transition: 600ms ease;
+  scale: 0.9;
+}
+.show {
+  opacity: 1;
+  background-color: #adadeb;
+  scale: 1;
+}
