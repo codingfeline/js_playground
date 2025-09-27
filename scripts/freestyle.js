@@ -79,3 +79,8 @@ console.log(getLoanMessage(65000, 750))
 let num = 'this is not a number'
 num = Number(num)
 console.log(typeof num, num)
+
+const lunch = ['beef', 'rice']
+const rand = Math.floor(Math.random() * lunch.length)
+console.log(`Menu items: ${lunch.join(', ')}`)
+console.log(lunch, rand, lunch ? lunch[rand] : 'none')
