@@ -1,5 +1,5 @@
 let arr = [1, 2, 3]
-copyArr = arr.slice()
+let copyArr = arr.slice()
 console.log(copyArr)
 
 let anothercopy = [...arr]
