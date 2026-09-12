@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+
+}
+
+body {
+    display: grid;
+    background: #efefc1;
+    min-height: 100vh;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: 
+        "header"
+        "main"
+        "footer";
+}
+
+header {
+    background: #50909b91;
+    grid-area: header;
+}
+main {
+    background: #4b683991;
+    grid-area: main;
+}
+footer {
+    background: #50909b91;
+    grid-area: footer;
+}
