@@ -1,0 +1,80 @@
+
+.box::before {
+  content: attr(data-box);
+  /* display: block; */
+  /* position: absolute; */
+  top: 0;
+  left: 20px;
+  color: red;
+  /* width: 100%;
+  height: 100%; */
+  background-color: rgba(199, 109, 109, 0.3);
+  margin: 20px;
+} 
+
+.box::after {
+  content: ' parent after';
+  /* display: block; */
+  /* position: absolute; */
+  top: 0;
+  left: 130px;
+  /* width: 100%;
+  height: 100%; */
+  background-color: rgba(155, 155, 240, 0.3);
+}
+.box { margin: 20px; color: green;}
+
+.box1 {
+  background: pink; 
+  content: attr(data-box);
+}
+.box1::before {
+  content: ' box1 before  ';
+  /* display: block; */
+  /* position: absolute; */
+  top: 100px;
+  left: 0;
+  /* width: 100%;
+  height: 100%; */
+  color: blue;
+  background-color: rgba(196, 240, 155, 1);
+  margin: 20px;
+}
+.box1::after {
+    content: ' box1 after instead of parent box ';
+    /* display: block; */
+    /* position: absolute; */
+  padding: 0 10px;
+  margin: 0 20px;
+  top: 100px;
+  left: 130px;
+  /* width: 100%;
+  height: 100%; */
+  /* background-color: rgba(155, 155, 240, 1); */
+}
+
+.box2 {
+    margin: 20px;
+    width: 300px;
+    height: 100px;  
+    border-radius: 40px;
+    corner-shape: notch;
+    background: navy; // bevel scoop 
+}
+
+.box3 {
+    width: 200px;
+    height: 200px;  
+    border-radius: 40px;
+    corner-shape: bevel;
+    background: lightblue; // bevel scoop
+}
+
+.box4 {
+    width: 100px;
+    height: 100px;  
+    border-radius: 80px;
+    corner-shape: scoop;
+    background: blue; // bevel scoop
+}       
+
