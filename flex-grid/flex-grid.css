@@ -3,6 +3,10 @@
     padding: 0; 
     box-sizing: border-box;
 }
+html {
+    font-size: 12pt;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
 body {
     background: #efefc1;
@@ -19,34 +23,102 @@ body {
 
 nav, aside, main, footer {
     border-radius: 5px;
-    padding: 1em;
+    /* padding: 1em; */
 }
 nav {
     background: #50909b91;
     grid-area: nav;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.links-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
 }
 
 nav ul {
     display: flex;
     list-style: none;
+    flex: 1;
 }
-
-nav li:first-child {
+nav ul li:first-child  {
     margin-right: auto;
 } 
 
-nav li:nth-child(3) {
-    /* margin-left: auto;
-    margin-right: auto; */
-}
-
 nav a {
+    height: 100%;
     text-decoration: none;
-    color: #333;
-    padding: 0.3em 1.5em;
     display: flex;
+    align-items: center;
+    color: #333;
+    padding: 1em 20px;
 }
-
+nav a:hover {
+    background: #39616891;
+    color: white;
+}   
+nav svg {
+    fill: #333;
+}
+#menu-active {
+    display: none;
+}
+.open-menu-button, .close-menu-button {
+    display: none;
+}
+@media(max-width: 426px) {
+    body {
+        grid-template-areas: 
+        "nav nav"
+        "main main"
+        "footer footer";
+    }
+    aside {
+        display: none;
+    }   
+}
+@media(max-width: 400px) {
+    nav ul li:first-child  {
+        margin-right: 0;
+    }
+    nav ul  {
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        z-index: 10;
+        width: 250px;
+        background: #50909b;
+        box-shadow: -4px 2px 4px #00000051;
+        transition: right 0.3s ease-in-out;
+    }
+    nav a  {
+        box-sizing: border-box;
+        height: auto;
+        width: 100%;
+        padding: 20px 30px;
+        background: #98d9e5;
+    }
+    .open-menu-button {
+        padding: 20px;
+        display: block;
+    }
+    #menu-active:checked ~ .links-container ul {
+        right: 0;
+    }
+    #menu-active:checked ~ #overlay {
+        display: block;
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9;
+    }
+}
 aside {
     background: #39616891;
     padding: 1em;
