@@ -14,10 +14,23 @@ body {
         "main"
         "footer";
 }
-
+header, main, footer {
+    padding: 1.3em 1.5em;
+}
 header {
     background: #50909b91;
     grid-area: header;
+    display: flex;
+    gap: 1em;
+}
+
+header a {
+    text-decoration: none;
+    color: #333;
+}
+
+header a:first-child {
+    margin-right: auto;
 }
 main {
     background: #4b683991;
