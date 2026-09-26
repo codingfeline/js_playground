@@ -136,10 +136,40 @@ https://www.youtube.com/watch?v=2IV08sP9m3U - better responsive web design
 
 .pseudo {
     h1  {
-        color: lightblue;
-        &:before {
+        color: #4f7f8f;
+        position: relative;
+        width: fit-content;
+        &::after {
             content: '';
-
+            position: absolute;
+            width: 100%;
+            background: linear-gradient(to right, blue, green, red);
+            height: .1em;
+            bottom: -.3em;
+            /* border-radius: 5px; */
+            transition: all 100ms ease-in;
+            scale: 0;
+            left: 0;
+        }
+        &:hover::after {
+            background: linear-gradient(to right, red, blue, green);
+            scale: 1;
+        }
+        &::before {
+            content: '';
+            /* position: absolute; */
+            width: 100%;
+            background: linear-gradient(to right, blue, green, red);
+            height: .2em;
+            top: -.2em;
+            /* border-radius: 5px; */
+            transition: all 100ms ease-in;
+            scale: 0;
+            left: 0;
+        }
+        &:hover::before {
+            background: linear-gradient(to right, red, blue, green);
+            scale: 1;
         }
     }
 }
