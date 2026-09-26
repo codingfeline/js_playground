@@ -114,8 +114,14 @@ summary {
     padding: min(5em, 8%);
     background: #8ca6ec;
 }
-.res-font h1 {
-    font-size: clamp(1.8rem, calc(7vw + 1rem), 5rem)
+.res-font {
+    h1 {
+        font-size: clamp(1.8rem, calc(7vw + 1rem), 5rem);
+        background: linear-gradient(to right, red, blue);
+        background-clip: text;
+        color: transparent;
+        width: fit-content;    
+    }
 }
 .res-font > p:not(:first-child) {
     color: #197099;
@@ -127,3 +133,13 @@ https://www.youtube.com/watch?v=44FTAS-qT8Q
 https://www.youtube.com/watch?v=PL3Odw-k8W4
 https://www.youtube.com/watch?v=2IV08sP9m3U - better responsive web design
 */
+
+.pseudo {
+    h1  {
+        color: lightblue;
+        &:before {
+            content: '';
+
+        }
+    }
+}
