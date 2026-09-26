@@ -3,14 +3,17 @@
     "typescript": "^5.9.3"
   },
   "scripts": {
-    "build": "tsc", 
-    "watch": "tsc --watch"
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "format": "prettier --write ."
   },
   "name": "js_playground",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "prettier": "^3.9.9"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/codingfeline/js_playground.git"
