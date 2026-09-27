@@ -181,27 +181,50 @@ https://www.youtube.com/watch?v=2IV08sP9m3U - better responsive web design
   }
 }
 :root {
-  counter-reset: headings;
 }
 
-.counter-heading {
-  h2 {
-    counter-increment: headings;
-    margin: 0.5em 0;
-    display: flex;
-    gap: 0.75em;
-    align-items: center;
-    text-transform: capitalize;
-    color: #636262;
+
+.counter-heading, .another-counter-heading {
+    counter-reset: headings;
+
+    h2 {
+      counter-increment: headings;
+      display: flex;
+      gap: var(--gap, 0.75em);
+      align-items: center;
+      text-transform: var(--case, normal);
+
+      &:hover {
+        color: var(--colour, black);
+      }
+
+      &::before {
+        content: counter(headings);
+        background: var(--badge-bg, green);
+        color: var(--badge-colour, white);
+        padding: var(--badge-pad, 0.25em);
+        width: var(--badge-width, 40px);
+        margin: 2px 0;
+        border-radius: var(--radius, 4px);
+        text-align: center;
+      }
+      &:hover::before {
+        color: var(--badge-hover, black);
+      }
+    }
   }
-  h2::before {
-    content: counter(headings);
-    background-color: green;
-    border-radius: 4px;
-    padding: 0.25em;
-    margin: 2px 0;
-    width: 40px;
-    text-align: center;
-    color: white;
+.counter-heading h2 {
+  color: #585757;
+  --color: #020202;
+  --case: capitalize;
+}
+.another-counter-heading {
+  --gap: 0.6em;
+  --badge-bg: red;
+  --badge-colour: black;
+  --radius: 50%;
+  --badge-hover: pink;
+  --colour: red; 
+  --case: uppercase;
   }
 }
