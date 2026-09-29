@@ -182,15 +182,15 @@ https://www.youtube.com/watch?v=2IV08sP9m3U - better responsive web design
 }
 
 .corner-shape {
-  section { 
+  section {
     width: 100px;
-    background: red; 
-    height: 100px; 
+    background: red;
+    height: 100px;
     border-radius: 50px;
     /* corner-shape: bevel; */
     corner-shape: superellipse(5) notch;
     transition: all 400ms;
-    cursor: pointer; 
+    cursor: pointer;
     &:hover {
       /* background: blue;  */
       corner-shape: notch superellipse(5);
@@ -199,37 +199,38 @@ https://www.youtube.com/watch?v=2IV08sP9m3U - better responsive web design
   }
 }
 
-.counter-heading, .another-counter-heading {
-    counter-reset: headings;
+.counter-heading,
+.another-counter-heading {
+  counter-reset: headings;
 
-    h2 {
-      counter-increment: headings;
-      display: flex;
-      gap: var(--gap, 0.75em);
-      align-items: center;
-      text-transform: var(--case, normal);
+  h2 {
+    counter-increment: headings;
+    display: flex;
+    gap: var(--gap, 0.75em);
+    align-items: center;
+    text-transform: var(--case, normal);
+    transition: all 300ms;
+
+    &:hover {
+      color: var(--colour, black);
+    }
+
+    &::before {
+      content: counter(headings);
+      background: var(--badge-bg, green);
+      color: var(--badge-colour, white);
+      padding: var(--badge-pad, 0.25em);
+      width: var(--badge-width, 40px);
+      margin: 2px 0;
+      border-radius: var(--radius, 4px);
+      text-align: center;
       transition: all 300ms;
-
-      &:hover {
-        color: var(--colour, black);
-      }
-
-      &::before {
-        content: counter(headings);
-        background: var(--badge-bg, green);
-        color: var(--badge-colour, white);
-        padding: var(--badge-pad, 0.25em);
-        width: var(--badge-width, 40px);
-        margin: 2px 0;
-        border-radius: var(--radius, 4px);
-        text-align: center;
-        transition: all 300ms;
-      }
-      &:hover::before {
-        color: var(--badge-hover, black);
-      }
+    }
+    &:hover::before {
+      color: var(--badge-hover, black);
     }
   }
+}
 
 .counter-heading h2 {
   color: #585757;
@@ -242,7 +243,34 @@ https://www.youtube.com/watch?v=2IV08sP9m3U - better responsive web design
   --badge-colour: black;
   --radius: 50%;
   --badge-hover: pink;
-  --colour: red; 
+  --colour: red;
   --case: uppercase;
+}
+
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.border-image {
+  section {
+    width: 100px;
+    height: 100px;
+    background: green;
+    /* border-radius: 20px; */
+    border: 8px solid black;
+    border-image: conic-gradient(from var(--angle), blue, red, yellow, blue) 1;
+    animation: 2s spin linear infinite;
+    /* corner-shape: bevel; */
+  }
+}
+
+@keyframes spin {
+  from {
+    --angle: 0deg;
+  }
+  to {
+    --angle: 360deg;
   }
 }
