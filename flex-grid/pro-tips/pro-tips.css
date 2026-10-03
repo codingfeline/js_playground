@@ -191,10 +191,18 @@ https://www.youtube.com/watch?v=2IV08sP9m3U - better responsive web design
     corner-shape: superellipse(5) notch;
     transition: all 400ms;
     cursor: pointer;
+    position: relative;
     &:hover {
       /* background: blue;  */
       corner-shape: notch superellipse(5);
       /* corner-shape: scoop; */
+    }
+    &:hover::after {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      content: '';
     }
   }
 }
@@ -262,7 +270,9 @@ https://www.youtube.com/watch?v=2IV08sP9m3U - better responsive web design
     border: 8px solid black;
     border-image: conic-gradient(from var(--angle), blue, red, yellow, blue) 1;
     animation: 2s spin linear infinite;
-    /* corner-shape: bevel; */
+    &:hover {
+      animation: spinReverse 2s linear infinite;
+    }
   }
 }
 
@@ -272,5 +282,13 @@ https://www.youtube.com/watch?v=2IV08sP9m3U - better responsive web design
   }
   to {
     --angle: 360deg;
+  }
+}
+@keyframes spinReverse {
+  from {
+    --angle: 360deg;
+  }
+  to {
+    --angle: 0deg;
   }
 }
